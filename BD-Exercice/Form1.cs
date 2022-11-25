@@ -16,7 +16,7 @@ namespace BD_Exercice
         static string chaine = @"Data Source=\DESKTOP-6C4KUDE\User;Initial Catalog=BDGED_copy;Integrated Security=True";
         static SqlConnection cnx = new SqlConnection(chaine);
         static SqlCommand cmd = new SqlCommand();
-        static SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        static SqlDataAdapter adapter = new SqlDataAdapter(cmd); 
         private void Form1_Load(object sender, EventArgs e)
         {
 
