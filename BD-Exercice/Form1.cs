@@ -13,58 +13,67 @@ namespace BD_Exercice
         {
             InitializeComponent();
         }
-        static string chaine = @"Data Source=\DESKTOP-6C4KUDE\User;Initial Catalog=BDGED_copy;Integrated Security=True";
-        static SqlConnection cnx = new SqlConnection(chaine);
+
+        static string chaine = @"Data Source=DESKTOP-6C4KUDE\SQLEXPRESS;Initial Catalog=database;Integrated Security=True";
+        static SqlConnection cnx = new SqlConnection (chaine);
         static SqlCommand cmd = new SqlCommand();
         static SqlDataAdapter adapter = new SqlDataAdapter(cmd); 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
             cnx.Open();
             cmd.Connection = cnx;
             cmd.CommandText = "insert into livre(Nom , Prix, Auteur) values('" + comboBoxNom.Text + "','" + textBoxPrix.Text + "', '" + textBoxAuteur.Text + "') ";
-            cmd.ExecuteNonQuery();
-            cnx.Close();
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             cnx.Open();
             cmd.Connection = cnx;
-            cmd.CommandText = "update livre set Nom ='" + comboBoxNom.Text + "' where Auteur='" + textBoxAuteur.Text + "' ";
-            cmd.ExecuteNonQuery();
-            cnx.Close();
+            cmd.CommandText = "update livre set Nom ='" + comboBoxNom.Text + "' where Auteur='" + textBoxAuteur.Text + "'";
+            btnNew.Enabled = false;
+            btnDelete.Enabled = false;
         }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             cnx.Open();
             cmd.Connection = cnx;
-            cmd.CommandText = "delete from Livre where Nom de livre='" + comboBoxNom.Text + "' ";
-            cmd.ExecuteNonQuery();
-            cnx.Close();
+            cmd.CommandText = "delete from livre where Nom='" + comboBoxNom.Text + "' ";
+            btnNew.Enabled = false;
+            btnEdit.Enabled = false;
         }
-
-        private void comboBoxNom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            comboBoxNom.Items.Add("livret1");
-            comboBoxNom.Items.Add("livret2"); 
-            comboBoxNom.SelectedIndex = 0;
-        }
+       
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            cmd.ExecuteNonQuery();
-            cnx.Close();
+            if(btnNew.Enabled|| btnDelete.Enabled || btnEdit.Enabled)
+            {
+                cmd.ExecuteNonQuery();
+                cnx.Close();
+            }
+            btnCancel.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            cnx.Close();
+            if (btnNew.Enabled || btnDelete.Enabled || btnEdit.Enabled)
+            {
+                cnx.Close();
+            }
+            btnConfirm.Enabled = false;
+        }
+        private void btnAfficher_Click(object sender, EventArgs e)
+        {
+            cmd.CommandText = "select * from livre ";
+            adapter.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            dt.Clear();
+            adapter.Fill(dt);
+            dataGridView1.DataSource = dt;
         }
     }
 }

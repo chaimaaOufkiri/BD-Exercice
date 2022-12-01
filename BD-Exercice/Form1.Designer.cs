@@ -41,12 +41,13 @@ namespace BD_Exercice
             this.textBoxAuteur = new System.Windows.Forms.TextBox();
             this.comboBoxNom = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAfficher = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(157, 267);
+            this.btnEdit.Location = new System.Drawing.Point(179, 199);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(112, 34);
             this.btnEdit.TabIndex = 0;
@@ -56,7 +57,7 @@ namespace BD_Exercice
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(302, 267);
+            this.btnDelete.Location = new System.Drawing.Point(307, 199);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(112, 34);
             this.btnDelete.TabIndex = 1;
@@ -66,7 +67,7 @@ namespace BD_Exercice
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(12, 267);
+            this.btnNew.Location = new System.Drawing.Point(46, 199);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(112, 34);
             this.btnNew.TabIndex = 2;
@@ -76,7 +77,7 @@ namespace BD_Exercice
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(595, 267);
+            this.btnCancel.Location = new System.Drawing.Point(576, 199);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 34);
             this.btnCancel.TabIndex = 3;
@@ -86,7 +87,7 @@ namespace BD_Exercice
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(448, 267);
+            this.btnConfirm.Location = new System.Drawing.Point(436, 199);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(112, 34);
             this.btnConfirm.TabIndex = 4;
@@ -98,7 +99,7 @@ namespace BD_Exercice
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.BackColor = System.Drawing.SystemColors.Window;
-            this.lblNom.Location = new System.Drawing.Point(52, 74);
+            this.lblNom.Location = new System.Drawing.Point(46, 20);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(115, 25);
             this.lblNom.TabIndex = 5;
@@ -108,7 +109,7 @@ namespace BD_Exercice
             // 
             this.lblPrix.AutoSize = true;
             this.lblPrix.BackColor = System.Drawing.SystemColors.Window;
-            this.lblPrix.Location = new System.Drawing.Point(52, 129);
+            this.lblPrix.Location = new System.Drawing.Point(46, 73);
             this.lblPrix.Name = "lblPrix";
             this.lblPrix.Size = new System.Drawing.Size(40, 25);
             this.lblPrix.TabIndex = 6;
@@ -118,7 +119,7 @@ namespace BD_Exercice
             // 
             this.lblAuteur.AutoSize = true;
             this.lblAuteur.BackColor = System.Drawing.SystemColors.Window;
-            this.lblAuteur.Location = new System.Drawing.Point(52, 186);
+            this.lblAuteur.Location = new System.Drawing.Point(46, 135);
             this.lblAuteur.Name = "lblAuteur";
             this.lblAuteur.Size = new System.Drawing.Size(65, 25);
             this.lblAuteur.TabIndex = 7;
@@ -126,14 +127,14 @@ namespace BD_Exercice
             // 
             // textBoxPrix
             // 
-            this.textBoxPrix.Location = new System.Drawing.Point(302, 129);
+            this.textBoxPrix.Location = new System.Drawing.Point(279, 70);
             this.textBoxPrix.Name = "textBoxPrix";
             this.textBoxPrix.Size = new System.Drawing.Size(150, 31);
             this.textBoxPrix.TabIndex = 8;
             // 
             // textBoxAuteur
             // 
-            this.textBoxAuteur.Location = new System.Drawing.Point(302, 180);
+            this.textBoxAuteur.Location = new System.Drawing.Point(279, 129);
             this.textBoxAuteur.Name = "textBoxAuteur";
             this.textBoxAuteur.Size = new System.Drawing.Size(150, 31);
             this.textBoxAuteur.TabIndex = 9;
@@ -141,27 +142,41 @@ namespace BD_Exercice
             // comboBoxNom
             // 
             this.comboBoxNom.FormattingEnabled = true;
-            this.comboBoxNom.Location = new System.Drawing.Point(302, 74);
+            this.comboBoxNom.Items.AddRange(new object[] {
+            "livre1",
+            "livre2"});
+            this.comboBoxNom.Location = new System.Drawing.Point(279, 12);
             this.comboBoxNom.Name = "comboBoxNom";
             this.comboBoxNom.Size = new System.Drawing.Size(182, 33);
             this.comboBoxNom.TabIndex = 10;
-            this.comboBoxNom.SelectedIndexChanged += new System.EventHandler(this.comboBoxNom_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(52, 321);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 267);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(577, 105);
+            this.dataGridView1.Size = new System.Drawing.Size(514, 120);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // btnAfficher
+            // 
+            this.btnAfficher.Location = new System.Drawing.Point(576, 301);
+            this.btnAfficher.Name = "btnAfficher";
+            this.btnAfficher.Size = new System.Drawing.Size(145, 46);
+            this.btnAfficher.TabIndex = 12;
+            this.btnAfficher.Text = "Afficher";
+            this.btnAfficher.UseVisualStyleBackColor = true;
+            this.btnAfficher.Click += new System.EventHandler(this.btnAfficher_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAfficher);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBoxNom);
             this.Controls.Add(this.textBoxAuteur);
@@ -176,7 +191,6 @@ namespace BD_Exercice
             this.Controls.Add(this.btnEdit);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,6 +211,7 @@ namespace BD_Exercice
         private System.Windows.Forms.TextBox textBoxAuteur;
         private System.Windows.Forms.ComboBox comboBoxNom;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAfficher;
     }
 }
 
